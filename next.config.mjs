@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',           // ← PENTING BANGET
-  trailingSlash: true,        // ← PENTING
+  output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true         // ← PENTING untuk GitHub Pages
+    unoptimized: true,
   },
+
+  // Coba tanpa basePath dulu
+  // basePath: '/nyoba',
+  // assetPrefix: '/nyoba',
 
   transpilePackages: [
     "three",
@@ -13,8 +17,9 @@ const nextConfig = {
     "maath"
   ],
 
-  // Optimized imports
-  optimizePackageImports: ["framer-motion", "gsap"],
+  experimental: {
+    optimizePackageImports: ["framer-motion", "gsap"],
+  },
 };
 
 export default nextConfig;
